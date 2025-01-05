@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Ui/Css/docaco.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+      <header>
+        <picture>
+          <img
+            src="../Ui/Images/PetTopiaAlex.png"
+            alt=""
+            width="160px"
+          />
+        </picture>
+        <ul>
+          <div class="dropdown">
+            <button class="dropbtn">Serviços</button>
+            <div class="dropdown-content">
+              <a href="adocao.html">Adoção</a>
+              <a href="doacao.html">Doação</a>
+              
+            </div>
+          </div>
+          <a href="#">Sobre</a>
+
+          <a href="../View/index.html">Inicio</a>
+          <a id="profileIcon" style="display: none">
+            <img src="../Ui/Images/painel-de-controle.png" alt="Perfil" />
+            <p>acesse seu DashBoard</p>
+          </a>
+          <a href="../View/login.html"
+            ><button id="BttEntrar">Entrar</button></a
+          >
+          <a href="../View/cadastro.html"
+            ><button id="BttCadastrar">Cadastrar</button></a
+          >
+        </ul>
+      </header>
+        <article>
+        
+            <section id="caixa-text"><!--Background nessa secao-->
+                
+                <h1>Ajude Nossos Animais</h1>
+                <p>Seja um herói na vida de um animal! Sua contribuição pode fazer a diferença.</p>
+                
+               
+                   
+    
+            </section> 
+
+           <div class="caixa-form"> 
+              <div id="nav-btt"><!--Formulario sobre o background section e article-->
+              <button id="bttQRCODE">QR CODE & PIX</button>
+              <button id="bttCARTAO">CARTÃO</button>
+          </div>
+            <section class="sub-caixaform">
+                <div id="contact">
+                  <img src="../Ui/Images/PetTopiaAlex.png" alt="" width="200px">
+                  <div>
+                    <p>CONTACT</p>
+                    <p>(99) 99999-9999</p>
+                    <p>empresa@gmail.com</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae tempore atque modi, quam quod illo minima laboriosam</p>
+                  </div>
+                  </div>
+
+                <form action="" id="form1"> <!--QR CODE & PIX-->
+                    <img src="../Ui/Images/WhatsApp Image 2024-10-27 at 19.50.29.jpeg" alt="" width="200px">
+                    <div id="subform1">
+                    <p id="chavepix">00020101021126580014br.gov.bcb.pix0136e19917b2-cc9d-4299-8dd0-39474eb84ef25204000053039865802BR5922GABRIEL F M DOS SANTOS6011NOVA IGUACU62070503***6304F661</p>
+                    <button id="Copiar"><img src="../Ui/Images/copy-two-paper-sheets-interface-symbol.png" alt="" width="20px"></button>
+                    </div>
+                </form>
+
+                <form action="" style="display: none;" id="form2"> <!--CARTÃO-->
+                  <input type="text" id="valor" name="valor" placeholder="R$0,00" required oninput="mascaraValor(this)">
+               
+                  <button onclick="criarPagamento(event)">Doar</button>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, molestiae. Vero recusandae
+                      explicabo nobis ut aut, quas aliquid eos exercitationem repudiandae cum molestias reiciendis,
+                      facilis libero sed velit ab dicta.</p>
+                    </form>
+            </section>
+        </div>
+        </article>
+        <footer>
+            <section>
+              <div id="footer1">
+                <aside id="sub-footer1">
+                  <picture
+                    ><img
+                      src="../Ui/Images/ba05264e-dc54-4843-8046-be1f34f30f2f-removebg-preview (1).png"
+                      alt=""
+                      width="200px"
+                  /></picture>
+                  <div>
+                    <h1>
+                      Cuidamos de animais resgatados e promovemos adoções
+                      responsáveis. Sua ajuda é essencial para nossa missão!
+                    </h1>
+                    <p>Novembro, 2024</p>
+                  </div>
+                </aside>
+                <div id="sub-footer2">
+                  <p>Sobre nós</p>
+                  <p>Contato</p>
+                  <p>Redes Sociais</p>
+                  <p>CEOS</p>
+                </div>
+                <form action="">
+                  <h2>Venha e deixa seu Feedback</h2>
+                  <label for="">Nome:</label>
+                  <input type="text" />
+                  <label for="">Email:</label>
+                  <input type="email" name="" id="" />
+                  <label for="">Mensagem:</label>
+                  <textarea name="" id=""></textarea>
+                </form>
+              </div>
+              <aside id="footer2">
+                <p>TCC Faetec</p>
+                <ul>
+                  <li>Termos e Diretrizes</li>
+                  <li>Privacidade e Política</li>
+                  <li>Cookies</li>
+                </ul>
+              </aside>
+            </section>
+          </footer>
+    </main>
+    
+</body>
+<script src="../../Client/Components/daocaobtt.js"></script>
+<script src="../../Api/payment.js"></script>
+</html>

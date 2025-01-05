@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Ui/Css/cadastro.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <header>
+       
+        <ul>
+          <div class="dropdown">
+            <button class="dropbtn">Serviços</button>
+            <div class="dropdown-content">
+              <a href="adocao.html">Adoção</a>
+              <a href="#">Doação</a>
+              <a href="#">Consultas</a>
+            </div>
+          </div>
+          <a href="#">Sobre</a>
+          <a href="../View/index.html">Inicio</a>
+          <button id="BttEntrar">Entrar</button>
+          <button id="BttCadastrar">Cadastrar</button>
+        </ul>
+      </header>
+      <article>
+        <picture><img src="../Ui/Images/PetTopiaAlex.png" alt="" width="200px"></picture>
+        <section>
+            <h1>Seja Bem vindo!</h1>
+            <p>Se cadastra para adquirir Benefícios</p>
+            <form id="cadastroForm">
+                <label for="nome" class="required">Nome:</label>
+                <div class="input">
+                    <img src="../Ui/Images/do-utilizador (1).png" width="25px" alt="">
+                    <input type="text" id="nome">
+                </div>
+            
+                <label for="cpf" class="required">CPF:</label>
+                <div class="input">
+                    <img src="../Ui/Images/cpf (1).png" width="25px" alt="">
+                    <input type="text" id="cpf" maxlength="14">
+                </div>
+            
+                <label for="telefone" class="required">Telefone:</label>
+                <div class="input">
+                    <img src="../Ui/Images/telefone.png" width="25px" alt="">
+                    <input type="text" id="telefone" maxlength="15">
+                </div>
+            
+                <label for="datanasc" class="required">Data de Nascimento:</label>
+                <div class="input">
+                    <img src="../Ui/Images/datas.png" width="25px" alt="">
+                    <input type="text" id="datanasc" maxlength="10">
+                </div>
+            
+                <label for="email" class="required">Email:</label>
+                <div class="input">
+                    <img src="../Ui/Images/o-email.png" width="25px" alt="">
+                    <input type="text" id="email">
+                </div>
+            
+                <label for="senha"class="required">Senha:</label>
+                <div class="input">
+                    <img src="../Ui/Images/trancar.png" width="25px" alt="">
+                    <input type="password" id="senha">
+                </div>
+                <fieldset>
+                    <legend class="required">Gênero:</legend>
+                    <div class="inputGene">
+                        <input type="radio" id="generoFeminino" name="genero" value="FEMININO">
+                        <label for="generoFeminino">Feminino</label>
+                    </div>
+                    <div class="inputGene">
+                        <input type="radio" id="generoMasculino" name="genero" value="MASCULINO">
+                        <label for="generoMasculino">Masculino</label>
+                    </div>
+                    <div class="inputGene">
+                        <input type="radio" id="generoOutros" name="genero" value="OUTROS">
+                        <label for="generoOutros">Outros</label>
+                    </div>
+                </fieldset>
+                <button type="submit">Cadastrar</button>
+            </form>
+        <p>Já tem cadastro? <a href="../View/login.html">Login</a></p>
+    </section>
+      </article>
+</body>
+<script src="../../Client/Components/mascara.js"></script>
+<script src="../../Api/autenticacao.js"></script>
+</html>

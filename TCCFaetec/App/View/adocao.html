@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Ui/Css/adocao.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Adocao - PetTopia</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <picture>
+          <img
+            src="../Ui/Images/PetTopiaAlex.png"
+            alt=""
+            width="220px"
+          />
+        </picture>
+        <ul>
+          <div class="dropdown">
+            <button class="dropbtn">Serviços</button>
+            <div class="dropdown-content">
+              <a href="adocao.html">Adoção</a>
+              <a href="#">Doação</a>
+            </div>
+          </div>
+          <a href="#">Sobre</a>
+          <a href="../View/index.html">Inicio</a>
+          <a href="../View/login.html"><button id="BttEntrar">Entrar</button></a>
+          <a href="../View/cadastro.html "><button id="BttCadastrar">Cadastrar</button></a>
+        </ul>
+      </header>
+      <article>
+        <section id="abaAdocao">
+          <div class="caixa-text">
+            <span>
+              <h1>Pets para adoção</h1>
+              <p>
+                Para realizar uma adoção, você precisa realizar cadastramento ou
+                estar logado! precisamos de algumas informações suas para poder
+                seguir com o processedimento.
+              </p>
+            </span>
+            <div id="caixa-btt">
+              <button id="CadastrarAnimalAdocao">
+                Cadastrar Animal para Adoção
+              </button>
+            </div>
+          </div>
+          <div id="animais-adocao-container" class="container">
+            <!-- Os cards de animais para adoção serão carregados aqui -->
+          </div>
+        </section>
+      </article>
+
+
+
+      <div id="cadastroModal" class="modal">
+        <div class="modal-content">
+          <div id="subtextModal">
+            <span class="close">&times;</span>
+            <h1 id="resultadoCadastro">Realizar Cadastro</h1>
+          </div>
+          <p id="textcadastro">
+            Para realizar a doação de um animal, o doador deverá preencher os dados referentes ao animal, como espécie, idade, porte e condições de saúde. Após o envio das informações, será gerado um comprovante em formato PDF com todos os detalhes pertinentes à doação.<br>
+            <br>
+O doador terá um prazo de até 10 dias úteis para comparecer à unidade indicada, munido do comprovante e do animal. O documento em PDF conterá instruções adicionais, incluindo o endereço da unidade e requisitos necessários para a conclusão do processo de doação.
+          </p>
+          <form id="animalForm">
+            <section id="CaixaPrincipal">
+            
+              <aside class="caixaInput">
+                <label class="required" for="nome">Nome</label>
+                <input
+                  type="text"
+                  name="nome"
+                  id="nome"
+                  placeholder="Digite o nome do seu Pet..."
+                  required
+                />
+                <fieldset>
+                  <legend>Descrição</legend>
+                  <textarea
+                    name="descricao"
+                    id="descricao"
+                    cols="50"
+                    rows="5"
+                  ></textarea>
+                </fieldset>
+              </aside>
+
+              <aside class="caixaInput">
+                <label class="required" for="especie">Espécie</label>
+                <select
+                  name="especie"
+                  id="especie"
+                  required
+                  onchange="atualizarRacas()"
+                >
+                  <option value="">Selecione...</option>
+                </select>
+
+                <label class="required" for="especie">Sexo</label>
+                <select
+                  name="sexo"
+                  id="sexo"
+                  required
+                  onchange="atualizarRacas()"
+                >
+                  <option value="FEMEA">FEMEA</option>
+                  <option value="MACHO">MACHO</option>
+                </select>
+
+                <label class="required" for="raca">Raça</label>
+                <select id="raca2">
+                  <option value="">Selecione...</option>
+                </select>
+
+                <label class="required" for="idade">Idade</label>
+                <select id="idade2" required>
+                  <option value="">Selecione...</option>
+                </select>
+
+                <label class="required" for="cor">Cor</label>
+                <input
+                  type="text"
+                  name="cor"
+                  id="cor"
+                  placeholder="Digite a cor"
+                  required
+                />
+
+                <label class="required" for="peso">Peso</label>
+                <input
+                  type="number"
+                  name="peso"
+                  id="peso"
+                  placeholder="Digite o peso"
+                  required
+                />
+
+                <div class="custom-file-input">
+                  <label class="required" for="fileInput">Insira uma foto do seu animal</label>
+                  <input
+                    type="file"
+                    id="fileInput"
+                    name="fotoAnimal"
+                    accept="image/*"
+                    onchange="showFileName()"
+                  />
+                  <span id="fileName">Nenhum arquivo selecionado</span>
+                </div>
+                <img
+                  id="previewImage"
+                  src=""
+                  alt="Prévia da imagem"
+                  style="display: none; max-width: 200px; max-height: 200px"
+                />
+                <!-- Campo hidden para adoção -->
+                <input type="hidden" name="adocao" value="true" />
+              </aside>
+            </section>
+            <div id="divisaobttcadastrar">
+            <button type="button" id="buttonSelect" onclick="abrirAnimaisModal()">
+              <div class="svg-wrapper-1">
+                <div class="svg-wrapper">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="30"
+                    height="30"
+                    class="icon"
+                  >
+                    <path
+                      d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <span>Selecionar Animal</span>
+            </button>
+            <button onclick="cadastrarAnimal(event)" id="EnviarBtt">
+              <div class="svg-wrapper-1">
+                <div class="svg-wrapper">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                      fill="currentColor"
+                      d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <span>Enviar Pedido de Doação</span>
+              
+            </button>
+          </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Modal para mostrar os animais cadastrados -->
+      <div id="animaisModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="fecharAnimaisModal()">&times;</span>
+          <h2>Animais Cadastrados</h2>
+          <div id="listaAnimais">
+            <!-- Aqui você pode gerar dinamicamente os animais cadastrados -->
+          </div>
+        </div>
+      </div>
+      <div id="pdfModal" class="modal" style="display: none">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2>Cadastro realizado com sucesso!</h2>
+          <p>
+            Seu animal foi cadastrado com sucesso e está pronto para adoção.
+          </p>
+          <p>
+            Clique no botão abaixo para baixar o comprovante de envio do animal:
+          </p>
+          <button id="downloadPdfBtn" onclick="baixarPDF()">
+            Baixar Comprovante
+          </button>
+        </div>
+      </div>
+
+      <div id="EnviarDocumentoAdocao" class="modal" style="display: none">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <h2>Cadastro realizado com sucesso!</h2>
+          <p>
+            Seu animal foi cadastrado com sucesso e está pronto para adoção.
+          </p>
+          <p>
+            Clique no botão abaixo para baixar o comprovante de envio do animal:
+          </p>
+          <button id="downloadPdfBtn" onclick="baixarPDF()">
+            Baixar Comprovante
+          </button>
+        </div>
+      </div>
+
+      <div id="modalAnimal" class="modal">
+        <div class="modal-contentAnimal">
+          <span class="close" onclick="fecharModal()">&times;</span>
+          <section id="CaixaPrincipalModalAnimal">
+            <div>
+              <img id="modalFoto" src="" alt="Foto do animal" />
+            </div>
+            <section id="CaixaDados">
+              <aside id="DadosAnimal">
+                <div id="subCaixaAnimal1">
+                  <h2 id="modalNome"></h2>
+                  <p>
+                    <strong>Espécie:</strong> <span id="modalEspecie"></span>
+                  </p>
+                  <p><strong>Raça:</strong> <span id="modalRaca"></span></p>
+                  <p><strong>Idade:</strong> <span id="modalIdade"></span></p>
+                </div>
+                <div id="subCaixaAnimal2">
+                  <p><strong>Cor:</strong> <span id="modalCor"></span></p>
+                  <p><strong>Peso:</strong> <span id="modalPeso"></span></p>
+                  <p id="CaixaDescricao">
+                    <strong>Descrição:</strong>
+                    <span id="modalDescricao"></span>
+                  </p>
+                </div>
+              </aside>
+              <div>
+                <p id="Termos">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Voluptatum, at vel, ad sit a molestiae amet quam blanditiis
+                  quibusdam quo ipsa sapiente omnis doloremque officiis
+                  laboriosam explicabo perspiciatis
+                </p>
+                <button onclick="EnviarDocumentoAdocao()">
+                  Solicitar Adotaçao
+                </button>
+              </div>
+            </section>
+          </section>
+        </div>
+      </div>
+
+      <div id="modalEnvioDocumentos" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="fecharModalEnvioDocumentos()"
+            >&times;</span
+          >
+          <div class="caixaformtext">
+         <h2>Comprovante de Renda Necessário para Adoção</h2>
+          <div id="descricaoForm">
+            <p>
+              Acreditamos que a adoção de um animal de estimação é uma decisão
+              importante e que deve ser feita com
+              <strong>rresponsabilidade</strong>. Para garantir que nossos
+              animais sejam adotados por pessoas que possam cuidar adequadamente
+              deles, solicitamos o <strong>comprovante de renda.</strong>
+            </p>
+            <ul>
+              O comprovante de renda nos ajuda a assegurar que o adotante possui
+              uma faixa salarial adequada, permitindo cobrir os custos
+              relacionados aos cuidados com o animal. Estimamos que uma renda
+              mensal mínima de R$ 2.500,00 é necessária para garantir que o
+              adotante possa arcar com despesas essenciais, como:
+            </ul>
+            <li>
+              Alimentação: Proporcionar uma dieta balanceada e de qualidade.
+            </li>
+            <li>
+              Cuidados médicos: Garantir vacinas, consultas veterinárias e
+              emergências.
+            </li>
+            <li>
+              higiene: Investir em produtos de higiene, como shampoos, areias e
+              outros itens essenciais.
+            </li>
+          </div>
+        </div>
+
+          <form id="formEnvioDocumentos" enctype="multipart/form-data">
+            <label class="required" for="comprovanteRenda">Comprovante de Renda:</label>
+            <input
+              type="file"
+              id="comprovante"
+              name="comprovante"
+              accept=".pdf,.jpg,.jpeg,.png"
+              required
+            /><br /><br />
+            <button type="submit" onclick="enviarDocumentos(event)">Enviar Documentos</button>
+            <div class="caixaformtext">
+            <p>
+              Nosso objetivo é garantir que cada animal tenha um lar seguro e
+              feliz, onde suas necessidades sejam atendidas. Ao solicitar o
+              comprovante de renda, estamos tomando uma medida proativa para
+              promover a adoção responsável e o bem-estar dos nossos amigos de
+              quatro patas. Agradecemos pela sua compreensão e por se unir a nós
+              nessa missão de amor e cuidado!
+            </p>
+          </div>
+            <p id="resultMessage"></p>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="../../Api/authAdocoesAnimais.js"></script>
+  <script src="../../Api/authCadatrarAdocao.js"></script>
+  <script src="../../Client/Components/inputFile.js"></script>
+</html>

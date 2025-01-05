@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Ui/Css/login.css">
+    <title>Login - PetTopia</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header>
+       
+        <ul>
+          <div class="dropdown">
+            <button class="dropbtn">Serviços</button>
+            <div class="dropdown-content">
+              <a href="adocao.html">Adoção</a>
+              <a href="#">Doação</a>
+              <a href="#">Consultas</a>
+            </div>
+          </div>
+          <a href="#">Sobre</a>
+          <a href="../View/index.html">Inicio</a>
+          <a href="../View/login.html"><button id="BttEntrar">Entrar</button></a>
+          <a href="../View/cadastro.html"><button id="BttCadastrar">Cadastrar</button></a>
+        </ul>
+      </header>
+      <article>
+        <picture><img src="../Ui/Images/PetTopiaAlex.png" alt="" width="200px"></picture>
+        <section>
+            <h1>Bem vindo Novamente!</h1>
+            <p>Realiza o Login e venha adquirir seus Benefícios novamente</p>
+            <form id="loginForm" action="">
+              <label for="email"  class="required" >Email:</label>
+              <div class="input">
+                  <img src="../Ui/Images/o-email.png" width="25px" alt="">
+                  <input type="text" id="email" name="email" placeholder="Digite seu email" required>
+              </div>
+
+              <label for="senha"  class="required" >Senha:</label>
+              <div class="input">
+                  <img src="../Ui/Images/trancar.png" width="25px" alt="">
+                  <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                  <button  type="button" id="togglePassword" >
+                    <img src="../Ui/Images/hide.png" id="eyeIcon" width="20px">
+                </button>
+              </div>
+
+              <p id="EsqueciSenhaModal"><a href="#" data-modal="emailModal">Esqueceu a senha?</a></p>
+              <button type="submit">Entrar</button>
+          </form>
+          <div id="errorMessage" class="error-message"></div>
+          <p>Não tem cadastro? <a href="../View/cadastro.html">Cadastra-se</a></p>
+      </section>
+  </article>
+
+  <!-- Modal para envio de email -->
+  <div id="emailModal" class="modal">
+    <div class="modal-content">
+        <span class="close" data-close="emailModal">&times;</span>
+        <h2>Esqueci a Senha</h2>
+        <label for="email">Digite seu email:</label>
+        <input type="email" id="emailInput" required>
+        <button id="enviarEmailBtn">Enviar Token</button>
+        <div id="emailError" class="error-message"></div>
+    </div>
+</div>
+
+<!-- Modal para inserir token -->
+<div id="tokenModal" class="modal">
+    <div class="modal-content">
+        <span class="close" data-close="tokenModal">&times;</span>
+        <h2>Verificação de Token</h2>
+        <label for="token">Digite o token que você recebeu por email:</label>
+        <input type="text" id="tokenInput" required>
+        <button id="validarTokenBtn">Validar Token</button>
+        <div id="tokenError" class="error-message"></div>
+    </div>
+</div>
+
+<!-- Modal para redefinir a senha -->
+<div id="novaSenhaModal" class="modal">
+    <div class="modal-content">
+        <span class="close" data-close="novaSenhaModal">&times;</span>
+        <h2>Redefinir Senha</h2>
+        <label for="newPassword">Digite sua nova senha:</label>
+        <input type="password" id="newPasswordInput" required>
+        <button id="resetarSenhaBtn">Redefinir Senha</button>
+        <div id="senhaError" class="error-message"></div>
+    </div>
+</div>
+  <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+    <div class="spinner"></div>
+    <p>Enviando token, por favor aguarde...</p>
+</div>
+</body>
+<script src="../../Api/authLogin.js"></script>
+<script src="../../Api/authEsqueciSenha.js"></script>
+</html>

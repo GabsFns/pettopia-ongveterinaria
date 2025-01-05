@@ -1,0 +1,390 @@
+
+@font-face {
+    font-family: Roboto;
+    src: url(../Fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: Poppins;
+    src: url(../Fonts/Poppins-Regular.ttf);
+}
+
+body{
+    margin: 0;
+}
+
+label.required::after {
+    content: "*";
+    color: red;
+    margin-left: 5px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+     font-family: Poppins;
+     width: 100%;
+     background-color: white;
+     position: fixed;
+     z-index: 1;
+     margin: 0px 0px 29px 0px;
+}
+
+*{
+    z-index: 0;
+}
+header ul{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+header ul > li{
+    list-style: none;
+}
+header a{
+    text-decoration: none;
+    color: black;
+}
+
+#BttEntrar, #BttCadastrar{
+    padding: 12px;
+    width: 120px;
+    border-radius: 20px;
+    border: none;
+}
+
+#BttEntrar{
+    
+}
+
+#BttCadastrar{
+    background-color: #deefe7;
+}
+
+.doacaoAdocao a {
+    text-decoration: none;
+    list-style: none;
+    margin-top: 80px;
+}
+
+.doacaoAdocao {
+    padding: 100px 0px;
+}
+
+
+
+
+
+#secao-doar button{
+    margin: 30px;
+}
+
+
+
+
+
+
+.dropbtn {
+    background-color: #1d5b5c;
+    color: rgb(255, 255, 255);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width: 160px;
+    transition: all 0.2s ease-in;
+    border-radius: 60% 10px 10px 2px;
+  }
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+
+  .dropdown:hover .dropdown-content {display: block;} 
+
+
+  .dropdown:hover .dropbtn {background-color: #b7fffa; color: black;}
+.caixa-form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    position: relative;
+    bottom: 100px;
+    min-width: 30%;
+    max-width: 75%;
+    margin: auto;
+    z-index: 0;
+    
+    
+}
+#form2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    gap: 30px;
+    max-width: 560px;
+    align-items: center;
+   
+}
+#form2 #valor{
+    width: 160px;
+    text-align: center;
+    padding: 18px;
+    font-size: 34px;
+    margin: auto;
+    border: none;
+    border-bottom: 1px solid #0b7577;
+    outline: none;
+}
+.focuscolor:focus{
+    box-shadow: 2px 2px #0b7577,
+                4px 4px #1a3536;
+}
+#form2 p{
+    text-align: center;
+    font-family: Poppins;
+    font-size: 11px;
+}
+#form2 button{
+    padding: 8px;
+    background-color: #000000;
+    color: white;
+    font-family: Roboto;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 520px;
+}
+#subInput{
+    display: flex;
+    gap: 20px;
+}
+#subInput input, #numeroCartao{
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid black;
+    width: 240px;
+    outline: none;
+    transition: all 0.2s ease-in;
+}
+#numeroCartao{
+    width: 520px;
+}
+.caixa-form #nav-btt{
+    display: flex;
+    justify-content: flex-end;
+    z-index: 0;
+}
+.caixa-form #nav-btt button{
+    border-radius: 10px 10px 0px 0px;
+    padding: 6px;
+    border-bottom: none;
+    background: white;
+    z-index: 1000;
+    border: none;
+    width: 200px;
+}
+.sub-caixaform{
+    display: flex;
+    border: 1px solid rgba(0, 0, 0, 0.208);
+    box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.297);
+    background-color: white;
+    border-top: none;
+
+}
+#contact{
+    background-image: url(../Images/blackcanva.jpg);
+    object-fit: cover;
+    object-position: center;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(12px);
+    max-width: 300px;
+    min-width: 200px;
+    padding: 5px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Poppins;
+    text-align: center;
+    
+    color: rgb(0, 0, 0);
+}
+#contact div{
+    background-color: rgba(255, 255, 255, 0.815);
+    
+}
+#contact img{
+    padding: 0px 160px 0px 0px;
+}
+#contact p{
+    font-size: 12px;
+}
+#chavepix{
+    width: 400px;         /* Define a largura máxima */
+    white-space: nowrap;  /* Impede a quebra de linha */
+    overflow: hidden;     /* Oculta o texto que excede o limite */
+    text-overflow: ellipsis; 
+    font-family: Poppins;
+    font-size: 12px;
+    padding: 0px 10px;
+    border-radius: 8px;
+}
+
+#form1 button{
+    background-color: #000000;
+    outline: none;
+    border: none;
+    padding: 6px;
+    height: 60px;
+}
+#form1 button img{
+    filter: invert(100%)
+}
+
+
+#subform1{
+    display: flex;
+    align-items: center;
+    background-color: rgb(205, 205, 205);
+    border-radius: 10px;
+    
+     z-index: 100;
+    
+}
+#form1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    gap: 40px;
+    background-color: white;
+    padding: 20px;
+    
+}
+
+#caixa-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(../Images/Black\ and\ White\ Phone\ Mockup\ Webinar\ Promotion\ Instagram\ Story\ \(Site\).png);
+    object-fit: cover;
+    object-position: center;
+    background-position: 100% 70%;
+    background-size: cover;
+    
+    
+    color: rgb(0, 0, 0);
+    padding: 190px 0px 150px;
+    height: 400px;
+    z-index: 0;
+    text-align: center;
+}
+#caixa-text h1{
+    font-size: 38px;
+    font-family: Roboto;
+    
+}
+#caixa-text p{
+    font-family: Poppins;
+    margin: 0px 90px;
+}
+
+
+
+
+
+
+footer{
+    position: absolute;
+    bottom: 1;
+    width: 100%;
+    margin: 200px 0px;
+}
+
+footer #footer1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 20px;
+    background-color: #000000;
+    color: white;
+    border-radius: 50px 50px 0px 0px;
+  }
+  footer #footer1 h1{
+    width: 400px;
+    font-family: Poppins;
+  }
+  #footer1 form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: Poppins;
+  }
+
+#footer1 form h2{
+    font-size: 16px;
+    text-align: center;
+}
+  #footer1 form input, textarea{
+    width: 350px;
+    padding: 8px;
+    outline: none;
+  }
+  #sub-footer1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    font-family: Poppins;
+    align-items: center;
+  }
+  #sub-footer2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: Poppins;
+   
+  }
+
+footer #footer2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Poppins;
+    padding: 30px;
+    align-items: center;
+    background-color: #0b7577;
+}
+footer #footer2 ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+footer #footer2 ul > li{
+    list-style: none;
+}

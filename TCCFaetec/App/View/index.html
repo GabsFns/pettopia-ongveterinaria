@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Ui/Css/index.css" />
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>PetTopia - Ong Animal</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <picture>
+          <img
+            src="../Ui/Images/PetTopiaAlex.png"
+            alt=""
+            width="160px"
+          />
+        </picture>
+        <ul>
+          <div class="dropdown">
+            <button class="dropbtn">Serviços</button>
+            <div class="dropdown-content">
+              <a href="adocao.html">Adoção</a>
+              <a href="doacao.html">Doação</a>
+              
+            </div>
+          </div>
+          <a href="#">Sobre</a>
+
+          <a href="../View/index.html">Inicio</a>
+          <a id="profileIcon" style="display: none">
+            <img src="../Ui/Images/painel-de-controle.png" alt="Perfil" />
+            <p>acesse seu DashBoard</p>
+          </a>
+          <a href="../View/login.html"
+            ><button id="BttEntrar">Entrar</button></a
+          >
+          <a href="../View/cadastro.html"
+            ><button id="BttCadastrar">Cadastrar</button></a
+          >
+        </ul>
+      </header>
+
+      <article class="doacaoAdocao">
+        <a href="adocao.html">
+          <div class="caixaDD">
+            <h1>Adoção e Doação</h1>
+            <p>Venha doar seu pet ou adote um Companheiro</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="Apresent-1">
+        <picture
+          ><img
+            src="../Ui/Images/ae7d693087fc7abb700d0456f0cfce8f-removebg-preview.png"
+            alt=""
+            style="display: none;"
+        /></picture>
+        <section>
+          <h1>PetTopia <br>Paraíso dos Pets</h1>
+          <p>
+            Descubra o universo encantado da PetTopia! Aqui, resgatamos,
+            cuidamos e oferecemos consultas gratuitas para animais, além de
+            encontrar lares cheios de amor para nossos amigos peludos. Junte-se
+            a nós na missão de transformar vidas e criar finais felizes para
+            todos os pets. Venha fazer parte dessa jornada e deixe seu coração
+            ser tocado por uma nova amizade!
+          </p>
+
+          <a href="../View/login.html"><button id="bttJunte">Junte-se a Nós</button></a>
+        </section>
+      </article>
+
+      <article class="Apresent-2">
+        <aside id="Caixa-1">
+          <img src="../Ui/Images/gatinho.png" alt="" width="70px" />
+          <h1>Encontre Seu Novo Companheiro</h1>
+          <p>
+            Explore nossos animais resgatados e encontre o amigo peludo que está
+            esperando por um lar amoroso. Cada adoção é uma nova chance para um
+            pet e um novo capítulo para sua vida. Clique aqui para conhecer
+            nossos adoráveis pets disponíveis para adoção.
+          </p>
+        </aside>
+        <aside id="Caixa-2">
+          <img src="../Ui/Images/cuidado.png" alt="" width="70px" />
+          <h1>Proteja e Defenda os Animais</h1>
+          <p>
+            A nossa ONG está comprometida com a proteção e defesa dos animais contra
+            maus-tratos. Trabalhamos ativamente para conscientizar a comunidade sobre
+            a importância de respeitar e proteger todas as formas de vida.
+          </p>
+        </aside>
+        <aside id="Caixa-3">
+          <img src="../Ui/Images/ajudando.png" alt="" width="70px" />
+          <h1>Denuncie e Solicite Ajuda</h1>
+          <p>
+            Veja algo suspeito ou precisa de ajuda com um animal? A PetTopia
+            está aqui para ajudar! Denuncie casos de abuso ou negligência,
+            solicite o resgate de um animal em situação de risco, ou reporte um
+            animal perdido.
+          </p>
+        </aside>
+      </article>
+
+      <article class="Apresent-3">
+        <section>
+          <aside>
+            <div class="central01">
+              <picture
+                ><img src="../Ui/Images/patas.png" alt="" width="130px"
+              /></picture>
+              <div id="Explicao1">
+                <h1>Como Sua Doação Ajuda:</h1>
+                <p>
+                  Oferecemos cuidados médicos, alimentação, abrigo seguro e
+                  promovemos campanhas de conscientização e adoção responsável.
+                </p>
+              </div>
+            </div>
+            <div class="central02">
+              <picture
+                ><img
+                  src="../Ui/Images/caixa-de-coracao.png"
+                  alt=""
+                  width="130px"
+              /></picture>
+              <div id="Explicao2">
+                <h1>Formas de Contribuir:</h1>
+                <p>
+                  Contribua quantas vezes quiser! Sua doação financeira faz toda
+                  a diferença, e você também pode ajudar doando itens essenciais
+                  como ração, tecidos, brinquedos e outros suprimentos para
+                  encher nossos abrigos de amor.
+                </p>
+              </div>
+            </div>
+          </aside>
+
+          <div id="secao-doar">
+            <h1 id="Titulo">Faça a <span>DIFERENÇA</span> com sua Doação</h1>
+            <p id="Descricao">
+              Sua contribuição é fundamental para continuarmos nosso trabalho de
+              resgate, cuidado e adoção de animais. Com cada doação, podemos
+              oferecer cuidados médicos, alimentação e abrigo para pets em
+              necessidade. Além disso, suas doações ajudam a financiar campanhas
+              de conscientização e programas de apadrinhamento.
+            </p>
+
+            <a href="doacao.html"><button id="bttVenha">Venha Doar!</button></a>
+          </div>
+        </section>
+      </article>
+
+      <article id="caixanumero">
+        <div id="caixaNumerosDesc">
+          <h1>Nossos Números</h1>
+          <p>
+          Desde 2017, nossa organização dedicou-se a resgatar, reabilitar,
+          castrar, vacinar e cuidar de mais de 6.000 cães e gatos em situações
+          de abandono, negligência e maus-tratos. Esses esforços não apenas
+          transformaram a vida desses animais, mas também contribuíram para o
+          controle populacional e a prevenção de doenças. Esses dados refletem
+          nosso compromisso com a causa do bem-estar animal e a generosidade da
+          comunidade que nos apoia. Com seu apoio, esperamos continuar ampliando
+          nosso impacto e ajudando ainda mais animais necessitados nos próximos anos.
+        </p>
+        
+        </div>
+        <ul>
+          <section class="counter" id="animais">
+            <li class="counter-number">+0</li>
+            <p>Animais</p>
+          </section>
+          <section class="counter" id="resgates">
+            <li class="counter-number">+0</li>
+            <p>Resgates</p>
+          </section>
+          <section class="counter" id="unidades">
+            <li class="counter-number">+0</li>
+            <p>Unidades</p>
+          </section>
+        </ul>
+      </article>
+
+      
+
+      <article class="Apresent-5">
+        <h1>Nossas Unidade!</h1>
+        <p>
+          Descubra onde cuidamos dos nossos animais resgatados. Nossas unidades
+          oferecem cuidados médicos, abrigo e apoio essencial. Clique no mapa
+          para saber mais sobre cada local e veja como você pode ajudar.
+        </p>
+        <section>
+          <div class="unidades-buttons">
+            <button onclick="showMap(1)">Unidade Ricardo De Albuquerque</button>
+            <button onclick="showMap(2)">Unidade Nova Iguaçu</button>
+            <button onclick="showMap(3)">Unidade Nilópolis</button>
+            <button onclick="showMap(4)">Unidade Quintino</button>
+            <button onclick="showMap(5)">Unidade Marechal Hermes</button>
+          </div>
+
+          <div class="mapa" id="map1">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d117666.19542364024!2d-43.47951771072717!3d-22.83695110552991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x9963db51e1ce17%3A0xed2b761412cef78a!2sEstr.%20Mal.%20Alencastro%2C%20s%2Fn%20-%20Quadra%20B%20-%20Ricardo%20de%20Albuquerque%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2021615-320!3m2!1d-22.8369723!2d-43.3971161!5e0!3m2!1spt-BR!2sbr!4v1725397949455!5m2!1spt-BR!2sbr"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="mapa" id="map2">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58865.93578388119!2d-43.52725285136715!3d-22.760890899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x996706b94cd7c3%3A0x6cc06f785a4b5855!2sFAETEC%20Nova%20Igua%C3%A7u%20-%20Unidade%20Centro!5e0!3m2!1spt-BR!2sbr!4v1725398060371!5m2!1spt-BR!2sbr"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="mapa" id="map3">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58843.24594202566!2d-43.470797551367184!3d-22.813471199999988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x996409cdc415f9%3A0xa528d4b932de596e!2sFAETEC%20CVT%20Nil%C3%B3polis!5e0!3m2!1spt-BR!2sbr!4v1725398163173!5m2!1spt-BR!2sbr"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="mapa" id="map4">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58809.00993556596!2d-43.40078565136719!3d-22.892591599999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997d3680ac745b%3A0xa4cc2c319f818e2d!2sFAETEC%20Quintino!5e0!3m2!1spt-BR!2sbr!4v1725398199296!5m2!1spt-BR!2sbr"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="mapa" id="map5">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235293.48732617332!2d-43.680502405468744!3d-22.8594324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99625250af7fa5%3A0xe0e94df812d6d5ba!2sFAETEC%20Campus%20Marechal%20Hermes!5e0!3m2!1spt-BR!2sbr!4v1725398365067!5m2!1spt-BR!2sbr"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </section>
+      </article>
+
+      <footer>
+        <section>
+          <div id="footer1">
+            <aside id="sub-footer1">
+              <picture
+                ><img
+                  src="../Ui/Images/PetTopiaAlex.png"
+                  alt=""
+                  width="200px"
+              /></picture>
+              <div>
+                <h1>
+                  Cuidamos de animais resgatados e promovemos adoções
+                  responsáveis. Sua ajuda é essencial para nossa missão!
+                </h1>
+                <p>Novembro, 2024</p>
+              </div>
+            </aside>
+            <div id="sub-footer2">
+              <p>Sobre nós</p>
+              <p>Contato</p>
+              <p>Redes Sociais</p>
+              <p>CEOS</p>
+            </div>
+            <div id="qrcode">
+              <img src="../Ui/Images/WhatsApp Image 2024-10-27 at 19.50.29.jpeg" width="200px" alt="">
+              <p>Realize sua Doação!</p>
+            </div>
+            <form id="feedback-form">
+              <h2>Venha e deixa seu Feedback</h2>
+              <label for="name">Nome:</label>
+              <input type="text" id="name" required />
+              
+              <label for="email">Email:</label>
+              <input type="email" id="email" required />
+              
+              <label for="message">Mensagem:</label>
+              <textarea id="message" required></textarea>
+              
+              <button type="submit">Enviar Feedback</button>
+            </form>
+          </div>
+          <aside id="footer2">
+            <p>TCC Faetec</p>
+            <ul>
+              <li>Termos e Diretrizes</li>
+              <li>Privacidade e Política</li>
+              <li>Cookies</li>
+            </ul>
+          </aside>
+        </section>
+      </footer>
+    </main>
+  </body>
+  <script src="../../Client/Components/mapa.js"></script>
+  <script src="../../Api/autenticacao.js"></script>
+  <script src="../../Api/authConsulta.js"></script>
+  <script src="../../Api/authPerfilIndex.js"></script>
+  <script src="../../Client/Components/animacao.js"></script>
+  <script src="../../Client/Components/numeros.js"></script>
+  <script src="../../Client/Components/emailjs.js"></script>
+  
+</html>

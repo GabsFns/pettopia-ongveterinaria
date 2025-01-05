@@ -1,0 +1,872 @@
+@font-face {
+    font-family: Roboto;
+    src: url(../Fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: Poppins;
+    src: url(../Fonts/Poppins-Regular.ttf);
+}
+body{
+    margin: 0;
+    margin: 0px 5px;
+    box-sizing: border-box;
+}
+
+label.required::after {
+    content: "*";
+    color: red;
+    margin-left: 5px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+     font-family: Poppins;
+     width: 100%;
+     background-color: white;
+     position: fixed;
+     z-index: 1;
+     margin: 0px 0px 29px 0px;
+}
+
+*{
+    z-index: 0;
+}
+header ul{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+header ul > li{
+    list-style: none;
+}
+header a{
+    text-decoration: none;
+    color: black;
+}
+
+
+#BttEntrar, #BttCadastrar{
+    padding: 12px;
+    width: 120px;
+    border-radius: 20px;
+    border: none;
+}
+
+#BttEntrar{
+    
+}
+
+#BttCadastrar{
+    background-color: #deefe7;
+}
+
+.doacaoAdocao a {
+    text-decoration: none;
+    list-style: none;
+    margin-top: 80px;
+}
+.doacaoAdocao {
+    padding: 100px 0px;
+}
+
+
+
+
+
+#secao-doar button{
+    margin: 30px;
+}
+
+
+
+
+
+
+.dropbtn {
+    background-color: #1d5b5c;
+    color: rgb(255, 255, 255);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width: 160px;
+    transition: all 0.2s ease-in;
+    border-radius: 60% 10px 10px 2px;
+  }
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+    #bttJunte{
+        transition: all 0.2s ease-in;
+    }
+
+    #bttJunte:hover{
+        transform: scale(1.08);
+    }
+
+    #bttVenha{
+        transition: all 0.2s ease-in;
+    }
+
+    #bttVenha:hover{
+        transform: scale(1.08);
+    }
+
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+
+  .dropdown:hover .dropdown-content {display: block;} 
+
+
+  .dropdown:hover .dropbtn {background-color: #b7fffa; color: black;}
+
+  .doacaoAdocao {
+    background-image: url(../Images/boas_surpresas_vira_lata_e_dez_2.webp);
+    position: relative;
+    height: 400px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.caixaDD h1,
+.caixaDD p {
+    color: white; /* Cor do texto */
+    margin: 0; /* Remove margens para melhor alinhamento */
+    font-family: Poppins;
+}
+
+.doacaoAdocao::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Filtro escuro por trás do texto */
+    z-index: 0; /* Fica atrás do texto */
+}
+/* Estilos adicionais */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Move para baixo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Posição original */
+    }
+}
+
+.caixaDD {
+    position: relative; /* Garante que o texto esteja acima do fundo */
+    z-index: 1; /* Garante que a caixa esteja acima do pseudo-elemento */
+    padding: 60px; /* Adiciona um pouco de espaço interno */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro para melhor contraste */
+    border-radius: 8px; /* Bordas arredondadas, opcional */
+    font-size: 24px;
+    animation: fadeIn 1s ease-in; /* Aplica a animação de desvanecimento */
+}
+.caixaDD:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Aumenta a opacidade ao passar o mouse */
+    transition: background-color 0.3s ease; /* Transição suave */
+     /* Aumenta ligeiramente a caixa */
+}
+
+.Apresent-1{
+    background-image: url(../Images/Black\ and\ White\ Phone\ Mockup\ Webinar\ Promotion\ Instagram\ Story\ \(Site\)\ \(1\).png);
+   background-position: center;
+   object-fit: cover;
+   object-position: center;
+ background-size: cover;
+    border-radius: 0px 0px 120px 0px;
+    padding: 340px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    color: white;
+    flex-wrap: wrap;
+}
+.Apresent-1 section{
+    width: 520px;
+    padding: 0px 0px 0px 150px;
+}
+.Apresent-1 h1{
+    font-family: Roboto;
+    font-size: 58px;
+    margin: 0;
+}
+.Apresent-1 p{
+    font-family: Poppins;
+    text-align: justify;
+}
+.Apresent-1 button{
+    padding: 14px;
+    width: 170px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #124e4f;
+    font-family: Poppins;
+}
+
+
+
+
+.Apresent-2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    align-items: center;
+    gap: 60px;
+
+}
+.Apresent-2 aside{
+    box-shadow: 0px 10px 14px 0px rgba(0, 0, 0, 0.455),
+                0px 12px 16px 0px rgba(76, 132, 140, 0.494);
+    width: 360px;
+    height: 300px;
+    padding: 20px;
+    position: relative;
+    bottom: 70px;
+    background-color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.Apresent-2 aside h1{
+    font-family: Roboto;
+
+}
+.Apresent-2 aside p{
+    font-family: Poppins;
+    font-size: 14px;
+
+}
+
+
+
+.Apresent-3{
+    margin-top: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #145f65;
+   
+}
+.Apresent-3 section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 50px;
+    padding: 70px;
+    margin-top: 60px;
+}
+.Apresent-3 aside{
+    display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    
+}
+.Apresent-3 #Titulo{
+    text-align: center;
+    font-size: 38px;
+}
+.Apresent-3 #Descricao{
+    text-align: center;
+    font-size: 16px;
+    width: 800px;
+    margin: auto;
+}
+.Apresent-3 span{
+    color: #145f65;
+    background-color: #ffffff;
+    padding: 10px;
+    letter-spacing: 2px;
+}
+.Apresent-3 aside {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 140px
+
+  ;
+ margin: 0px 0px 70px 0px;
+}
+.Apresent-3 .central01{
+    display: flex;
+    
+    width: 400px;
+    height: 300px;
+    background-color: #ffffff;
+    padding: 30px 70px 0px 30px;
+    border-radius: 60px;
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 10px 12px 0px #68686852;
+}
+.Apresent-3 .central02{
+   
+    display: flex;
+    width: 400px;
+    height: 300px;
+    background-color: #ffffff;
+    padding: 20px 70px 30px 30px;
+    border-radius: 60px;
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 10px 12px 0px #94949452;
+}
+.Apresent-3 #secao-doar h1{
+    color: rgb(255, 255, 255);
+    font-family: Roboto;
+}
+.Apresent-3 aside h1{
+ 
+    font-family: Poppins;
+}
+.Apresent-3 aside p{
+ 
+    font-family: Poppins;
+}
+.Apresent-3 #secao-doar p{
+    color: white;
+    font-family: Poppins;
+}
+.Apresent-3 button{
+    margin: auto;
+    width: 240px;
+    padding: 22px;
+
+    font-family: Poppins;
+    font-size: 16px;
+    background-color: #000000;
+    color: white;
+    border: 1px solid #000000;
+    border-radius: 30px;
+
+
+}
+.Apresent-3 aside img{
+    filter: invert(100%);
+    
+}
+.Apresent-3 picture{
+    background-color: #000000;
+    position: relative;
+    height: 390px;
+    top: -70px;
+    left: -30px;
+    border-radius: 50px 50px 0px 50px;
+    margin: 20px;
+    padding: 10px;
+}
+.Apresent-3 #secao-doar{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+#profileIcon{
+    display: flex;
+    align-items: center;
+    
+
+}
+.counter {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  
+  .counter.visible {
+    opacity: 1;
+  }
+
+  
+#profileIcon img{
+    width: 40px;
+    height: 40px;
+    margin: 0px 4px;
+}
+#profileIcon p{
+    width: 90px;
+}
+#caixanumero{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    }
+#caixaNumerosDesc{
+    max-width: 520px;
+    min-width: 300px;
+    font-size: 16px;
+    font-family: Poppins;
+    text-align: justify;
+    margin: 180px 0px;
+}
+#caixaNumerosDesc p{
+    font-size: 17px;
+}
+#caixaNumerosDesc h1{
+    color: #124e4f;
+}
+#caixanumero ul{
+    padding: 0px 80px;
+}
+#caixanumero section{
+    font-family: Poppins;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#caixanumero section li{
+    font-size: 52px;
+    list-style: none;
+}
+.Apresent-4{
+    box-shadow: 0px 10px 12px 0px #00000052;
+    display: flex;
+    flex-wrap: wrap;    
+    background-color:  #3eb0ad;
+    padding: 50px;
+    margin-top: 80px;
+    border-radius: 300px 0px 0px 0px;
+}
+.Apresent-4 section{
+    
+    width: 720px;
+    height: 250px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 80px;
+    text-align: center;
+    box-shadow: 0px 10px 12px 0px #00000052;
+}
+
+.Apresent-4 h1{
+    font-family: Roboto;
+    font-size: 32px;
+}
+
+.Apresent-4 p{
+    font-family: Poppins;
+    font-size: 14px;
+}
+.Apresent-4 button{
+    width: 220px;
+    padding: 12px;
+    background-color: #124e4f;
+    color: white;
+    font-family: Poppins;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 900px;
+    height: 720px;
+    
+}
+.modal-content form{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    font-family: Poppins;
+
+}
+.modal-content form input{
+    padding: 12px;
+    margin: 0px 0px 20px 0px;
+
+}
+#AgendarConsulta, #LimparConsulta{
+    padding: 14px;
+    width: 190px;
+    margin: 20px 0px 0px 20px;
+    color: white;
+    font-family: Poppins;
+
+}
+#DescModal{
+    font-family: Poppins;
+    font-size: 14px;
+}
+#resultadoConsulta{
+    font-family: Roboto;
+    font-size: 24px;
+}
+#AgendarConsulta{
+    background-color: #124e4f;
+   
+}
+#LimparConsulta{
+    background-color: #000000;
+}
+
+.modal-content form section, aside{
+    display: flex;
+    flex-direction: column;
+}
+.modal-content form aside select{
+    padding: 12px;
+    width: 220px;
+    margin: 0px 0px 20px 0px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.Apresent-5{
+    margin: 0px 20%;
+    padding: 50px;
+}
+.Apresent-5 h1{
+    font-family: Roboto;
+    font-size: 30px;
+}
+.Apresent-5 p{
+    font-family: Poppins;
+    width: 90%;
+}
+
+.Apresent-5 section{
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    
+}
+.Apresent-5 section iframe{
+    margin: 30px;
+}
+.Apresent-5 .unidades-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    
+}
+.Apresent-5 .unidades-buttons > button{
+    padding: 18px;
+    font-family: Poppins;
+    border-radius: 20px;
+    width: 280px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    background-color: #000000;
+    border: none;
+    box-shadow: 0px 10px 12px 0px #0000002a;
+}
+.mapa {
+    opacity: 0; /* Inicialmente invisível */
+    visibility: hidden; /* Inicialmente não visível */
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Transições suaves */
+    display: none; /* Inicialmente não exibido */
+  }
+  
+  .mapa.active {
+    opacity: 1; /* Torna o elemento visível */
+    visibility: visible; /* Garante que o elemento esteja visível */
+    display: block; /* Exibe o elemento */
+  }
+
+  footer{
+    box-shadow: 0px 10px 14px 0px #00000068;
+    border-radius: 50px 50px 0px 0px;
+  
+  }
+
+
+  footer #footer1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 20px;
+    background-color: #000000;
+    color: white;
+    border-radius: 50px 50px 0px 0px;
+  }
+  footer #footer1 h1{
+    width: 400px;
+    font-family: Poppins;
+  }
+  footer picture img
+  {
+    filter: grayscale(100%);
+    filter: invert(50%);
+  }
+#footer1 form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: Poppins;
+}
+
+#qrcode{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#qrcode p{
+    font-family: Poppins;
+}
+
+#footer1 form h2{
+    font-size: 16px;
+    text-align: center;
+}
+
+#footer1 form input, textarea{
+    width: 350px;
+    padding: 8px;
+    outline: none;
+}
+
+  #sub-footer1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    font-family: Poppins;
+    align-items: center;
+  }
+
+  #sub-footer2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: Poppins;
+   
+  }
+#feedback-form button{
+    padding: 6px;
+    background: white;
+    border-radius: 5px;
+    margin: 10px 0px;
+}
+
+footer #footer2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Poppins;
+    padding: 30px;
+    align-items: center;
+    background-color: #0b7577;
+}
+footer #footer2 ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+footer #footer2 ul > li{
+    list-style: none;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    header{
+        display: flex;
+        justify-content: space-between;
+         font-family: Poppins;
+      
+         background-color: white;
+         
+        
+         margin: 0px 0px 29px 0px;
+    
+    }
+    .dropdown{
+        display: none;
+    }
+
+
+    .Apresent-3 section {
+        display: flex
+    ;   flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+      
+        gap: 50px;
+        padding: 5px;
+        margin-top: 60px;
+    }
+    .Apresent-3 #secao-doar h1 {
+        color: rgb(255, 255, 255);
+        font-family: Roboto;
+        font-size: 22px;
+    }
+
+    .Apresent-3 #secao-doar p {
+        color: white;
+        font-family: Poppins;
+        font-size: 16px;
+       padding: 30px;
+    }
+
+    .Apresent-3 #Descricao {
+        
+        text-align: center;
+        width: 70%;
+        
+        margin: auto;
+     
+    }
+    .Apresent-3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .Apresent-1 img {
+        display: none;
+    }
+   
+    .Apresent-1 section{
+        text-align: center;
+        align-items: center;
+        padding: 0px 0px 0px 0px;
+       
+    }
+    .Apresent-1 section p{
+        text-align: center;
+    }
+        .Apresent-1 {
+            background-image: none;
+        background-color: #191617;
+            border-radius: 0px;
+            padding: 80px 80px 130px 80px;
+        }
+
+        .caixaDD {
+            position: relative;
+            z-index: 1;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            font-size: 18px;
+            animation: fadeIn 1s ease-in;
+        }
+
+
+        .doacaoAdocao { 
+            height: 200px;
+            width: 100%;
+            
+        }
+        #caixanumero {
+            display: flex
+        ;
+            justify-content: space-around;
+            align-items: baseline;
+        }
+
+        .Apresent-5 {
+            margin: 0px 20%;
+            padding: 50px;
+            text-align: center;
+        }
+
+        #sub-footer2 {
+           display: none;
+        }
+
+        html, body, #mapDiv {
+            height: 40%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .Apresent-5 section iframe {
+            margin: 30px;
+            width: 500px;
+            height: 400px;
+        }
+
+        footer #footer1 {
+            display: flex;
+        justify-content: center;
+        flex-direction: column;
+            flex-wrap: wrap;
+            
+            align-items: center;
+            padding: 40px;
+            gap: 20px;
+            text-align: center;
+            background-color: #000000;
+            color: white;
+            border-radius: 50px 50px 0px 0px;
+        }
+
+}
+

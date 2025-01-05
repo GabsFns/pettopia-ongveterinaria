@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Pega o parâmetro da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+        
+        // Verifica o status e exibe o SweetAlert2
+        if (status === 'failure') {
+            Swal.fire({
+                title: 'Falha no Pagamento!',
+                text: 'Ocorreu um erro ao processar o pagamento.',
+                icon: 'error',
+                confirmButtonText: 'Tentar Novamente'
+            }).then(() => {
+                // Redireciona para a página inicial ou tentativa de novo pagamento
+                window.location.href = '.../View/index.html'; // Altere para a URL da sua página principal
+            });
+        }
+    </script>
+</body>
+</html>

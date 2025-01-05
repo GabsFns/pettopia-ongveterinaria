@@ -1,0 +1,825 @@
+@font-face {
+    font-family: Roboto;
+    src: url(../Fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: Poppins;
+    src: url(../Fonts/Poppins-Regular.ttf);
+}
+body{
+    margin: 0px 8%;
+    box-sizing: border-box;
+}
+
+label.required::after {
+  content: "*";
+  color: red;
+  margin-left: 5px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+     font-family: Poppins;
+     
+     margin: 0px 20px 0px 0px;
+
+}
+header ul{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+header ul > li{
+    list-style: none;
+}
+header a{
+    text-decoration: none;
+    color: black;
+}
+
+
+#BttEntrar, #BttCadastrar{
+    padding: 12px;
+    width: 120px;
+    border-radius: 20px;
+    border: none;
+}
+
+#BttEntrar{
+    
+}
+
+#BttCadastrar{
+    background-color: #deefe7;
+}
+
+
+.dropbtn {
+    background-color: #159a9c;
+    color: rgb(255, 255, 255);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width: 160px;
+    transition: all 0.2s ease-in;
+    border-radius: 60% 10px 10px 2px;
+  }
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+
+  .dropdown:hover .dropdown-content {display: block;} 
+
+
+  .dropdown:hover .dropbtn {background-color: #b7fffa; color: black;}
+
+
+article{
+    display: flex;
+    justify-content: space-around;
+    margin: 80px 0px;
+    gap: 150px
+    ;
+}
+ 
+.filtro-container {
+    background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Gradiente sutil */
+    border: 1px solid #ddd; /* Borda cinza clara */
+    border-radius: 12px; /* Bordas mais arredondadas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+    padding: 20px;
+    width: 350px; /* Largura do filtro */
+    
+    transition: transform 0.3s; /* Transição suave ao passar o mouse */
+}
+
+.filtro-container:hover {
+    transform: translateY(-5px); /* Levanta o filtro ao passar o mouse */
+}
+
+h2 {
+    color: #333; /* Título em cinza escuro */
+   
+    margin-bottom: 30px; /* Espaçamento inferior */
+    font-family: Roboto;
+}
+
+.filtro-item {
+    margin-bottom: 15px; /* Espaçamento entre os campos */
+}
+
+h3 {
+    font-weight: bold;
+    color: #666; /* Título das opções em cinza */
+    font-family: Roboto;
+}
+
+.custom-radio {
+    display: flex;
+    align-items: center; /* Alinha o texto e o botão */
+    cursor: pointer; /* Indica que é clicável */
+    position: relative; /* Para posicionar o botão de rádio */
+}
+
+.custom-radio input[type="radio"] {
+    display: none; /* Oculta o botão de rádio padrão */
+}
+
+.radio-btn {
+    width: 24px; /* Largura do botão */
+    height: 24px; /* Altura do botão */
+    border-radius: 50%; /* Botão redondo */
+    border: 2px solid #333; /* Borda escura */
+    margin-right: 10px; /* Espaçamento à direita do botão */
+    background-color: #ffffff; /* Fundo branco */
+    transition: background-color 0.3s, border-color 0.3s; /* Transições suaves */
+}
+
+.custom-radio input[type="radio"]:checked + .radio-btn {
+    background-color: #0b7577; /* Cor de fundo quando selecionado */
+    border-color: #0b7577; /* Borda verde quando selecionado */
+}
+
+.custom-radio input[type="radio"]:checked + .radio-btn::after {
+    content: ""; /* Cria um círculo interno */
+    display: block; /* Mostra o círculo interno */
+    width: 14px; /* Largura do círculo interno */
+    height: 14px; /* Altura do círculo interno */
+    border-radius: 50%; /* Botão redondo */
+    background-color: #fff; /* Cor interna */
+    position: absolute; /* Posiciona relativo ao pai */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+   
+    transform: translate(-50%, -50%); /* Centraliza perfeitamente */
+}
+
+.custom-radio input[type="radio"]:not(:checked) + .radio-btn:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Efeito de sombra ao passar o mouse */
+}
+
+label {
+    color: #666; /* Rótulo em cinza */
+    margin: 5px 0; /* Espaçamento entre rótulos */
+    font-family: Poppins;
+}
+
+select {
+    width: 100%; /* Largura total do select */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #f9f9f9; /* Fundo claro */
+    font-family: Poppins;
+    transition: border-color 0.3s; /* Transição suave */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra interna */
+}
+
+select:focus {
+    border-color: #0b7577; /* Borda verde ao focar */
+    background-color: #fff; /* Fundo branco ao focar */
+    outline: none; /* Remove o contorno padrão */
+}
+
+.filtrar-button {
+    background-color: #0b7577; /* Fundo verde */
+    color: #fff; /* Texto branco */
+    border: none; /* Remove bordas padrão */
+    padding: 12px 15px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: background-color 0.3s, transform 0.2s; /* Transição suave */
+    width: 100%; /* Largura total do botão */
+}
+
+.filtrar-button:hover {
+    background-color: #39aeb0; /* Cor mais clara ao passar o mouse */
+    transform: translateY(-2px); /* Levanta o botão ao passar o mouse */
+}
+#LimparBtt {
+    background-color: #000000; /* Fundo verde */
+    margin: 12px 0px;
+    color: #fff; /* Texto branco */
+    border: none; /* Remove bordas padrão */
+    padding: 12px 15px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: background-color 0.3s, transform 0.2s; /* Transição suave */
+    width: 100%; /* Largura total do botão */
+}
+
+#LimparBtt:hover {
+    background-color: #373737; /* Cor mais clara ao passar o mouse */
+    transform: translateY(-2px); /* Levanta o botão ao passar o mouse */
+}
+#abaAdocao{
+    width: 80%;
+}
+#abaAdocao h1{
+    font-family: Roboto;
+    font-size: 32px;
+    margin: 0;
+}
+.caixa-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+#abaAdocao .caixa-text p{
+    font-family: Poppins;
+    font-size: 14px;
+}
+span{
+    width: 800px;
+}
+:root {
+    --white: #ececec;
+    --black: #111111;
+    --red1: #39aeb0;
+    --red2: #0d6364;
+    --colorPrimary: var(--red1);
+    --colorSecondary: var(--red2);
+    --cubic-bezier: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  /* Estilo e animação do botão */
+  #CadastrarAnimalAdocao {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    margin: 0px 0px 0px 120px;
+    border: 0;
+    position: relative;
+    letter-spacing: 0.15em;
+   
+    padding: 0.6rem 1rem; /* Diminui o padding */
+    background: transparent;
+    outline: none;
+    font-size: 16px; /* Diminui o tamanho da fonte */
+    color: var(--black);
+    transition: all 0.5s var(--cubic-bezier) 0.15s;
+  }
+  
+  #CadastrarAnimalAdocao::after,
+  #CadastrarAnimalAdocao::before {
+    border: 0;
+    content: "";
+    position: absolute;
+    height: 40%;
+    width: 10%;
+    transition: all 0.5s var(--cubic-bezier);
+    z-index: -2;
+    border-radius: 50%;
+  }
+  
+  #CadastrarAnimalAdocao::before {
+    background-color: var(--colorSecondary);
+    top: -0.75rem;
+    left: 0.5rem;
+    animation: topAnimation 2s var(--cubic-bezier) 0.25s infinite alternate;
+  }
+  
+  #CadastrarAnimalAdocao::after {
+    background-color: var(--colorPrimary);
+    top: 3rem;
+    left: 13rem;
+    animation: bottomAnimation 2s var(--cubic-bezier) 0.5s infinite alternate;
+  }
+  
+  #CadastrarAnimalAdocao:hover {
+    color: white;
+  }
+  
+  #CadastrarAnimalAdocao:hover::before,
+  #CadastrarAnimalAdocao:hover::after {
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    animation: none;
+  }
+  
+  #CadastrarAnimalAdocao:hover::after {
+    left: 0rem;
+  }
+  
+  #CadastrarAnimalAdocao:hover::before {
+    top: 0.5rem;
+    left: 0.35rem;
+  }
+  
+  /* Animações */
+  @keyframes topAnimation {
+    from {
+      transform: translate(0rem, 0);
+    }
+    to {
+      transform: translate(0rem, 3.5rem);
+    }
+  }
+  
+  @keyframes bottomAnimation {
+    from {
+      transform: translate(-11.5rem, 0);
+    }
+    to {
+      transform: translate(0rem, 0);
+    }
+  }
+
+/* Efeito ao passar o mouse para destacar ainda mais */
+#CadastrarAnimalAdocao:hover {
+    transform: scale(1.1) rotateX(15deg) rotateY(15deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Aumenta o destaque */
+}
+.divAdocao{
+
+}
+
+
+#CaixaPrincipal{
+    display: flex;
+   
+    justify-content: space-around;
+    gap: 120px;
+    align-items: flex-start;
+}
+#TipoCadInput{
+    display: flex;
+    justify-content: space-around;
+   
+    align-items: center;
+    gap: 50px;
+    margin: 70px 0px 0px 0px;
+}
+.caixaInput{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.textoNenhumAnimal{
+    margin: auto;
+    margin-top: 120px;
+    font-size: 38px;
+    font-family: Poppins;
+    background-color: #ccc;
+    padding: 20px;
+    text-align: center;
+}
+form button{
+    margin: 50px 0px;
+    background-color: #111111;
+    padding: 18px;
+    border: none;
+    color: white;
+    
+}
+textarea{
+    width: 100%; /* Define a largura do textarea */
+    height: 400px; /* Define a altura do textarea */
+    border: none; /* Remove a borda */
+    outline: none; /* Remove o outline ao focar */
+    resize: none; /* Desabilita o redimensionamento */
+    
+} 
+input{
+    padding: 8px;
+    width: 320px;
+    margin: 0px 0px 10px 0px;
+}
+.modal-content form{
+    width: 980px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+}
+#subtextModal{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+#subtextModal h1{
+    font-family: Roboto;
+    font-size: 32px;
+    width: 400px;
+    margin: 0;
+}
+.modal-content p{
+    font-family: Poppins;
+    font-size: 12px;
+}
+.modal {
+    display: none; /* Oculta o modal por padrão */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+.custom-file-input {
+    position: relative;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    margin: 20px 0px 0px 0px;
+}
+
+.custom-file-input input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-file-input label {
+    background-color: #4cafac;
+    color: white;
+    padding: 6px 8px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    
+    transition: background-color 0.3s;
+}
+
+.custom-file-input label:hover {
+    background-color: #45a08e;
+}
+
+#fileName {
+    margin-left: 10px;
+    font-style: italic;
+    color: #888;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 30px;
+    border: 1px solid #888;
+    width: 60%; 
+}
+.progress-container {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    width: 100%;
+    background-color: #4caf50;
+    transition: width 0.1s linear; /* Faz a animação de redução ser suave */
+  }
+.close {
+    color: #aaa;
+    float: right;
+    text-align: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.card {
+    background-color: #ffffff; /* Fundo do card */
+
+    border-radius: 8px; /* Cantos arredondados */
+    width: 240px;
+    height: 450px; /* Largura do card ocupando todo o espaço disponível */
+    display: flex;
+ flex-direction: column;
+    margin: 10px; /* Margem ao redor do card */
+    overflow: hidden; /* Oculta o excesso */
+    box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.319);
+    transition: all 0.3s ease-in; /* Efeito de transição */
+    align-items: center;
+    margin: auto;
+    
+    
+}
+.card:hover{
+    transform: scale(1.05);
+   /* box-shadow: 4px 4px #000000,
+                8px 8px #0b7577,
+                12px 12px #4cafac ; */
+}
+.card h2{
+    font-size: 14px;
+    font-family: Roboto;
+}
+.card button{
+    width: 150px;
+    border-radius: 20px;
+    padding: 6px;
+    background-color: #000;
+    color: white;
+    border: none;
+    margin: 10px 20px;
+
+}
+.card p{
+    font-size: 10px;
+    font-family: Poppins;
+    margin: 3px;
+} 
+.card img {
+    width: 240px; /* Largura padrão da imagem */
+    height: 200px; /* Altura padrão da imagem */
+    object-fit: cover; /* Faz a imagem preencher o contêiner sem esticar */
+    object-position: center; /* Centraliza a imagem dentro do contêiner */
+}
+#animais-adocao-container{
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#modalFoto{
+width: 400px; /* Largura padrão da imagem */
+height: 100%; /* Altura padrão da imagem */
+object-fit: cover; /* Faz a imagem preencher o contêiner sem esticar */
+object-position: center;
+border-radius: 0px 60px 60px 0px; /* Centraliza a imagem dentro do contêiner */
+}
+
+.modal-contentAnimal {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    
+    border: 1px solid #888;
+    width: 1000px; 
+    
+}
+#CaixaPrincipalModalAnimal{
+    display: flex;
+    justify-content: left;
+    gap: 50%;
+    
+}
+#CaixaDados{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 20px 20px;
+    text-align: justify;
+    justify-content: space-between;
+}
+#CaixaDados h2{
+    font-family: Roboto;
+}
+#DadosAnimal{
+    width: 400px;
+    height: 300px;
+    font-family: Poppins;
+}
+#CaixaDados button{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+#Termos{
+    font-family: Poppins;
+}
+.caixaformtext{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 90%;
+    min-width: 65%;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#modalEnvioDocumentos button{
+    max-width: 65%;
+    width: 40%;
+}
+#formEnvioDocumentos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 90%;
+    min-width: 65%;
+    align-items: center;
+    margin: auto;
+}
+#descricaoForm{
+    font-family: Poppins;
+    font-size: 12px;
+  
+}
+
+input#file-upload-button{
+    padding: 8px;
+    
+}
+#buttonSelect{
+    font-family: inherit;
+  font-size: 20px;
+  width: 180px;
+  background: #212121;
+  color: white;
+  fill: rgb(155, 153, 153);
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  font-weight: 1000;
+}
+#buttonSelect span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+  font-size: 12px;
+  font-family: Roboto;
+}
+
+#buttonSelect svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+#buttonSelect:hover {
+  background: #000;
+}
+
+#buttonSelect:hover .svg-wrapper {
+  transform: scale(1.25);
+  transition: 0.5s linear;
+}
+
+#buttonSelect:hover svg {
+  transform: translateX(2.5em) scale(1.1);
+  fill: #fff;
+}
+
+#buttonSelect:hover span {
+  opacity: 0;
+  transition: 0.5s linear;
+}
+
+#buttonSelect:active {
+  transform: scale(0.95);
+}
+
+#textcadastro{
+    text-align: justify;
+    margin: 0px 120px 30px 0px;
+}
+#divisaobttcadastrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+#EnviarBtt {
+    font-family: inherit;
+    font-size: 20px;
+    background: rgb(0, 0, 0);
+    color: white;
+    padding: 0.8em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    width: 290px;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  
+  #EnviarBtt span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+    font-size: 12px;
+    font-family: Roboto;
+  }
+  #EnviarBtt svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  #EnviarBtt:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+  
+  #EnviarBtt:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  }
+  
+  #EnviarBtt:hover span {
+    transform: translateX(4em);
+   
+  }
+  
+  #EnviarBtt:active {
+    transform: scale(0.95);
+  }
+  
+  @keyframes fly-1 {
+    from {
+      transform: translateY(0.1em);
+    }
+  
+    to {
+      transform: translateY(-0.1em);
+    }
+  }
+  
+
+
+  #listaAnimais {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  /* Estilo para cada card de animal */
+  .animal-card {
+    width: 150px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: center;
+  }
+  
+  /* Efeito de hover no card */
+  .animal-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Estilo da imagem do animal */
+  .animal-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  /* Estilo do nome do animal */
+  .animal-name {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }

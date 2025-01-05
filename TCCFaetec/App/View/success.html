@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Exibe o alerta SweetAlert2
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+
+        if (status === 'success') {
+            Swal.fire({
+                title: 'Pagamento Realizado com Sucesso!',
+                text: 'Obrigado pela sua doação.',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                // Redireciona para a página principal após o alerta
+                window.location.href = '../View/index.html'; // Altere para a URL da sua página principal
+            });
+        } else if (status === 'failure') {
+            Swal.fire({
+                title: 'Falha no Pagamento!',
+                text: 'Ocorreu um erro ao processar o pagamento.',
+                icon: 'error',
+                confirmButtonText: 'Tentar Novamente'
+            }).then(() => {
+                // Redireciona para a página inicial ou tentativa de novo pagamento
+                window.location.href = '../View/index.html'; // Altere para a URL da sua página principal
+            });
+        }
+        Swal.fire({
+            title: 'Aguardando Confirmação!',
+            text: 'Estamos aguardando a confirmação do seu pagamento. Você será notificado quando for concluído.',
+            icon: 'info',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            // Após o alerta, redireciona o usuário para a página principal
+            if (result.isConfirmed) {
+                window.location.href = '../View/index.html'; // Altere o link para sua página principal
+            }
+        });
+    </script>
+   
+</body>
+</html>

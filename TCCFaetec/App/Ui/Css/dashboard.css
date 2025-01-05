@@ -1,0 +1,1539 @@
+@font-face {
+    font-family: Roboto;
+    src: url(../Fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: Poppins;
+    src: url(../Fonts/Poppins-Regular.ttf);
+}
+*{
+    text-decoration: none;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    padding-left: 70px; /* Espaço inicial para a sidebar estreita */
+    transition: padding-left 0.3s;
+}
+
+label.required::after {
+    content: "*";
+    color: red;
+    margin-left: 5px;
+}
+
+main.expanded {
+    padding-left: 250px; /* O mesmo valor que a largura da sidebar expandida */
+}
+.sidebar {
+    width: 70px;
+    height: 100vh;
+    background-color: #0b7577;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: width 0.3s;
+    overflow: hidden;
+    font-family: Poppins;
+    
+}
+.sidebar:hover ~ main {
+    padding-left: 250px; /* O mesmo valor que a largura da sidebar expandida */
+}
+
+.sidebar:hover {
+    width: 250px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    opacity: 1;
+    visibility: visible;
+}
+#iconSide{
+    align-items: center;
+    background-color: white;
+    transition: all 0.2s ease-in;
+}
+#iconSide img{
+    margin: 0px 50px;
+}
+.sidebar ul li {
+    padding: 8px;
+    position: relative;
+}
+.sidebar p{
+    margin: 20px 10px 0px 10px;
+    font-size: 10px;
+    font-family: Poppins;
+    color: white;
+}
+
+
+.sidebar ul li a {
+    color: white;
+    padding: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in;
+}
+
+.sidebar ul li i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.sidebar .menu-text {
+    display: inline-block;
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.3s, width 0.3s;
+}
+#EmailUser {
+    color: white;
+    padding: 14px;
+    text-align: center;
+    
+}
+#EmailUser p {
+    padding: 8px;
+    
+}
+
+.sidebar:hover .menu-text {
+    opacity: 1;
+    
+}
+
+.sidebar .menu-text {
+    opacity: 0;
+    width: 0;
+}
+
+.sidebar p {
+    opacity: 0;
+    width: 0;
+}
+#iconSide{
+    opacity: 0;
+    width: 0;
+}
+.sidebar:hover .menu-text, #Bttsair {
+    opacity: 1;
+    width: auto;
+}
+
+.sidebar:hover p{
+    opacity: 1;
+    width: auto;
+}
+.sidebar:hover #iconSide{
+    opacity: 1;
+    width: auto;
+}
+
+
+
+
+.sidebar ul li a:hover {
+    background-color: #83cfd1;
+}
+
+.dropdown .arrow {
+    margin-left: auto;
+    transition: transform 0.3s;
+}
+
+.dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in, opacity 0.5s ease-in, transform 0.5s ease-in;
+    list-style-type: none;
+    padding-left: 20px;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.dropdown-menu li {
+    padding: 10px 0;
+}
+
+.dropdown.open .dropdown-menu {
+    max-height: 300px; /* Ajuste conforme necessário */
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.dropdown.open .arrow {
+    transform: rotate(180deg); /* Gira a seta para baixo */
+}
+
+#Bttsair {
+    position: fixed;
+    bottom: 0;
+    padding: 8px;
+   
+}
+#Bttsair a{
+    color: white;
+    padding: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    /* Ajuste para a largura inicial da sidebar */
+   display: flex;
+flex-direction: column;
+justify-content: center;
+
+
+  
+}
+#meuGrafico{
+    display: block;
+    box-sizing: border-box;
+    height: 530px;
+    max-width: 100%;
+    min-width: 300px;
+}
+
+
+#CaixaDashboard1{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    
+}
+#caixaDD{
+   text-align: center;
+   width: 100px;
+}
+#CaixaPerfil{
+    justify-content: space-between;
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+    width: 100%;
+    margin-bottom: 60px;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.202);
+}
+
+
+#CaixaPerfil img{
+    border-radius: 50px;
+}
+
+#CaixaPerfil .SubCaixaPerfil{
+    width: 500px;
+    height: 100px;
+   
+}
+#EncaixePerfil{
+    display: flex;
+    align-items: flex-start;
+    padding: 20px 30px 5px 30px;
+}
+
+#CaixaPerfil .SubCaixaPerfil > button{
+    border: none;
+    font-size: 10px;
+    padding: 8px;
+    width: 150px;
+    background-color: #0b7577;
+    color: white;
+    font-family: Poppins;
+}
+#CaixaPerfil .SubCaixaPerfil p{
+    font-size: 12px;
+    font-family: Poppins;
+    text-align: left;
+    color: black;
+}
+
+#CaixaPerfil .SubCaixaPerfil h1{
+    font-size: 28px;
+    margin: 2px;
+    font-family: Roboto;
+}
+.SubCaixaPerfil2{
+    padding: 0px 60px;
+}
+.SubCaixaPerfil2 button{
+    padding: 12px;
+    width: 170px;
+
+}
+#notificacaoBtt{
+    padding: 12px;
+    width: 45px;
+    border-radius: 50%;
+}
+
+
+#graficotext{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+#graficotext button{
+    margin: 20px 0px 0px 0px;
+    background-color: #000;
+    padding: 12px;
+    width: 160px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+
+
+#CaixaConsulta{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 360px;
+    background-image: url(../Images/blackcanva.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    box-shadow: 0px 5px 8px 0px #00000050;
+}
+#CaixaConsulta .sub-caixa{
+    display: flex;
+    margin: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 5px 8px 0px #0b757750;
+    background-color: rgba(255, 255, 255, 0.574);
+    backdrop-filter: blur(5px);
+   
+}
+.subText{
+    background-color: #FFF;
+    
+    border-radius: 150px;
+}
+
+#PaginaInicial{
+    background-color: #0b7577;
+    color: white;
+    font-family: poppins;
+    border: none;
+    margin: 0px 30px;
+}
+#CaixaAdocao{
+    background-color: #000000;
+   display: flex;
+   align-items: flex-start;
+    height: 200px;
+    width: 350px;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.212);
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+}
+#CaixaAdocao img{
+    filter: invert(100%);
+}
+#CaixaAdocao:hover{
+    transform: scale(1.03);
+}
+#CaixaDoacao:hover{
+    transform: scale(1.03);
+}
+#CaixaDenuncia:hover{
+    transform: scale(1.03);
+}
+#CaixaDoacao{
+    background-color: rgb(255, 255, 255);
+   display: flex;
+   align-items: flex-start;
+    height: 200px;
+    transition: all 0.3s ease-in;
+    width: 350px;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.212);
+    cursor: pointer;
+}
+
+
+.SubCaixaAdocao{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.SubCaixaAdoca h1{
+    margin: 0;
+}
+
+.SubCaixaAdocao button{
+    padding: 8px;
+    background-color: white;
+    border: none;
+    width: 150px;
+    font-size: 12px;
+}
+#CaixaDenuncia{
+    background-color: rgb(255, 255, 255);
+    
+    height: 200px;
+    width: 350px;
+    border-radius: 10px;
+    
+    display: flex;
+    transition: all 0.3s ease-in;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.212);
+    cursor: pointer;
+}
+
+#CaixaDenuncia p{
+    font-family: Poppins;
+    font-size: 42px;
+    margin: 0;
+}
+#CaixaDenuncia #imgCat{
+   width: 150px;
+}
+#subCaixaDenuncia{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: baseline;
+    
+}
+#subCaixaDenuncia h1{
+    margin: 0px 5px 0px 0px;
+}
+#subCaixaDenuncia2{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 40px;
+    align-items: flex-end;
+}
+#CaixaDenuncia button{
+ background: none;
+ font-family: Poppins;
+ border: none;
+ margin: 10px 0px 0px 0px;
+}
+
+#CaixaAdocao h1{
+    font-family: Roboto;
+    font-size: 18px;
+    margin: 0;
+    text-align: left;
+}
+#CaixaAdocao p{
+    font-size: 12px;
+    text-align: left;
+}
+#CaixaDoacao button{
+   
+    background: none;
+    border: none;
+}
+#subCaixaDoacao{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 40px;
+}
+#subCaixaDoacao p{
+    text-align: left;
+    margin: 5px 0px;
+    font-size: 12px;
+    font-weight: 100;
+    
+}
+#subCaixaDoacao h1{
+    margin: 0;
+    text-align: left;
+}
+#subCaixaDoaca2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.Divisao{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    
+    align-items: flex-start;
+    margin: 50px 0px;
+    width: 100%;
+}
+.grafico{
+    padding: 25px;
+    box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.305);
+    border-radius: 30px;
+    width: 80%;
+    
+}
+.grafico button{
+
+}
+.Divisao1{
+    display: flex;
+    
+    flex-direction: column;
+   align-items: center;
+}
+#caixa-divisao2{
+    display: flex;
+    gap: 30px;
+}
+.modal {
+    display: none; /* Ocultar o modal por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Cor de fundo */
+    background-color: rgba(0,0,0,0.4); /* Cor de fundo com opacidade */
+    animation: fadeIn 0.3s;
+    font-family: Poppins;
+    border-radius: 20px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Largura do modal */
+    animation: slideIn 0.3s;
+    border-radius: 20px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#confirmLogout, #cancelLogout  {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+  
+    color: white;
+    cursor: pointer;
+    width: 120px;
+}
+#cancelLogout{
+    background-color: #fa3d3d; /* Cor do botão */
+}
+#confirmLogout{
+    background-color: #8eef7f; /* Cor do botão */
+}
+
+#EmailUser li{
+    font-size: 11px;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+#perfil > form,#denuncia{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+   
+    font-family: Poppins;
+    width: 900px;
+    margin: auto;
+    margin-top: 120px;
+    box-shadow: 0px 10px 12px 0px #00000038;
+}
+#perfil h1{
+    padding: 10px;
+    font-family: Roboto;
+    font-size: 38px;
+    margin: 5px;
+}
+#perfil > form input{
+    padding: 12px;
+    margin: 0px 0px 20px 0px;
+    
+}
+#perfil > form #generoCliente{
+    margin: 0px 0px 20px 0px;
+}
+#perfil button{
+    width: 170px;
+    padding: 9px;
+    border: none;
+    font-family: Poppins;
+}
+#perfil #CaixaBtt1{
+    display: flex;
+    justify-content: space-between;
+
+}
+#perfil #CaixaBtt2{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#perfil #EsqueciSenhaModal{
+    background-color: #0b7577;
+   
+    padding: 9px;
+    color: white;
+    text-decoration: none;
+    width: 170px;
+    text-align: center;
+}
+#perfil #EsqueciSenhaModal a{
+    color: white;
+    text-decoration: none;
+   
+}
+#perfil #salvarDados, #editarDados{
+    background-color: #000;
+    color: white;
+    
+}
+
+
+/* Estilos para a janela modal */
+.modal {
+    display: none;
+     /* Inicialmente, o modal está oculto */
+    position: fixed; /* Fixa a posição no viewport */
+    z-index: 1; /* Coloca o modal acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura completa */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Ativa a rolagem se o conteúdo for grande demais */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semitransparente */
+}
+
+/* Conteúdo da janela modal */
+.modal-content {
+    font-family: Poppins;
+    background-color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    margin: 15% auto; /* Centraliza verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 1000px; /* Largura do modal */
+    max-width: 1000px; /* Limita a largura máxima */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+}
+
+/* Spinner de carregamento */
+.spinner {
+    font-family: Poppins;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid white;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-overlay p {
+    font-family: Poppins;
+    color: white;
+    margin-left: 20px;
+    font-size: 18px;
+}
+.modal-content input{
+    padding: 12px;
+    margin: 12px 0px;
+    outline: none;
+}
+.modal-content button{
+    padding: 18px;
+    margin: 8px 0px;
+    background-color: #deefe7;
+    font-family: Poppins;
+}
+
+/* Botão de fechar (X) */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo das mensagens de erro */
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+
+
+#form1Denuncia, #form2Denuncia{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#form1Denuncia input{
+    padding: 8px;
+    margin: 0px 0px 10px 0px;
+}
+#form1Denuncia #BuscarCEP{
+        background-color: #000;
+        padding: 8px;
+        color: white;
+}
+#form1Denuncia #continuarBtn, #enviarDenuncia, #voltarBtn{
+        padding: 8px;
+        color: white;
+        background-color: #0b7577;
+        margin: 10px 0px;
+}
+#form2Denuncia textarea{
+    width: 100%; /* Define a largura do textarea */
+    height: 200px; /* Define a altura do textarea */
+    border: none; /* Remove a borda */
+    outline: none; /* Remove o outline ao focar */
+    resize: none; /* Desabilita o redimensionamento */
+    
+} 
+#form2Denuncia select{
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+.table-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    max-height: 400px; /* Define a altura máxima do contêiner */
+    overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
+    
+
+}
+.table-container::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Cor do fundo da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #888; /* Cor da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Cor da barra de rolagem ao passar o mouse */
+}
+
+/* Estilo da tabela */
+.futuristic-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Poppins;
+    font-size: 14px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Estilo do cabeçalho da tabela */
+.futuristic-table thead {
+    background-color: #2c2c2e;
+    color: #ffffff;
+}
+
+.futuristic-table th {
+    padding: 20px; /* Aumentar o padding para cabeçalho */
+    text-align: left;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Estilo das linhas alternadas */
+.futuristic-table tbody tr:nth-child(even) {
+    background-color: #f0f0f0;
+    padding: 18px;
+}
+
+.futuristic-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+    padding: 18px;
+}
+
+/* Estilo das células */
+.futuristic-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Hover na linha */
+.futuristic-table tbody tr:hover {
+    background-color: #d6d6d6;
+    cursor: pointer;
+}
+.futuristic-table td {
+    padding: 20px; /* Aumentar o padding para as células */
+    border-bottom: 1px solid #e0e0e0;
+    max-width: 200px; /* Defina a largura máxima da coluna */
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    overflow: hidden; /* Oculta o texto que ultrapassa a largura */
+    text-overflow: ellipsis;
+}
+
+#formEdicao{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-family: Poppins;
+    
+}
+#formEdicao select{
+    padding: 6px;
+    margin: 0px 8px 0px 0px;
+}
+
+#formEdicao textarea{
+    width: 100%;
+    height: 200px;
+    border: none;
+    outline: none;
+    resize: none;
+}
+#SalvarEdicao{
+    background-color: #0b7577;
+    color: white;
+}
+.editarBtt{
+    background-image: url(../Images/editar.png);
+    background-size: cover;
+    background-color: none;
+    border: none;
+    background-position: center;
+    padding: 12px;
+    font-family: Poppins;
+    margin: 0px 0px 0px 50px;
+    cursor: pointer;
+}
+.excluirBtt{
+    background-image: url(../Images/trash.png);
+    background-size: cover;
+    background-color: none;
+    border: none;
+    background-position: center;
+    padding: 12px;
+    font-family: Poppins;
+    margin: 0px 0px 0px 50px;
+    cursor: pointer;
+}
+
+#realizarDenunciaBtn, #visualizarDenunciaBtn{
+    background-color: #2c2c2e;
+    color: white;
+    padding: 8px;
+    border: none;
+    font-family: Poppins;
+    transition: all ease-in 0.3s;
+}
+
+
+#realizarDenunciaBtn:hover{
+    transform: scale(1.05);
+    background-color: #0b7577;
+}
+#visualizarDenunciaBtn:hover{
+    transform: scale(1.05);
+    background-color: #0b7577;
+}
+
+#meusAnimais{
+    position: relative; /* Adicione esta linha */
+    z-index: 1;
+}
+
+
+#CaixaAnimaisSide{
+    display: flex;
+    justify-content: space-between;
+    position: relative; /* Adicione esta linha */
+    z-index: 1;
+    
+}
+#CaixaAnimaisSide form{
+    display: flex;
+    flex-direction: column;
+   
+    padding: 20px;
+    
+}
+#CaixaAnimaisSide form input{
+    width: 97%; /* Largura total do select */
+    padding: 10px;
+    margin: 0px 0px 20px 0px;
+
+
+}
+#SubForm {
+    width: 40%;
+    box-shadow: 0px 8px 12px 0px rgba(32, 120, 123, 0.353);
+    padding: 20px;
+    height: 100%;
+    position: fixed; /* Mantém o formulário fixo */
+    top: 0;
+    right: 0;
+    overflow-x: auto;
+    overflow-y: auto;
+    z-index: 1000; /* Valor alto para garantir que fique acima de outros elementos */
+}
+
+#CaixaAnimaisSide aside {
+    height: 800px;
+    width: 45%;
+    margin: 50px 0px 0px 160px;
+    display: grid; /* Usa grid para layout */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Cria colunas responsivas */
+    gap: 20px; /* Espaço entre os cards */
+    overflow-y: auto; /* Permite rolagem vertical se necessário */
+    padding: 10px; /* Espaçamento interno */
+    box-shadow: 0 10px 14px rgba(0, 0, 0, 0.2); /* Sombra do card */
+    z-index: 1; /* Opcional: valor menor que o do SubForm */
+}
+
+.custom-file-input {
+    position: relative;
+    display: inline-block;
+    font-family: Arial, sans-serif;
+    margin: 20px 0px 0px 0px;
+}
+
+.custom-file-input input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    color: white;
+}
+
+.custom-file-input label {
+    background-color: #4cafac;
+    color: white;
+    padding: 6px 8px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    
+    transition: background-color 0.3s;
+}
+
+.custom-file-input label:hover {
+    background-color: #45a08e;
+}
+
+#fileName {
+    margin-left: 10px;
+    font-style: italic;
+    color: #b8b8b8;
+}
+#CaixaAnimaisSide form textarea{
+    width: 100%; /* Define a largura do textarea */
+    height: 400px; /* Define a altura do textarea */
+    border: none; /* Remove a borda */
+    outline: none; /* Remove o outline ao focar */
+    resize: none; /* Desabilita o redimensionamento */
+    
+    
+} 
+#CaixaAnimaisSide form fieldset legend{
+    font-family: Poppins;
+}
+#CaixaAnimaisSide form label {
+    color: #666; /* Rótulo em cinza */
+    margin: 5px 0; /* Espaçamento entre rótulos */
+    font-family: Poppins;
+}
+
+#CaixaAnimaisSide form select {
+    width: 100%; /* Largura total do select */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #f9f9f9; /* Fundo claro */
+    font-family: Poppins;
+    transition: border-color 0.3s; /* Transição suave */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra interna */
+    margin: 0px 0px 20px 0px;
+}
+
+#CaixaAnimaisSide form select:focus {
+    border-color: #0b7577; /* Borda verde ao focar */
+    background-color: #fff; /* Fundo branco ao focar */
+    outline: none; /* Remove o contorno padrão */
+}
+
+#SubForm::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+}
+
+#SubForm::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Cor do fundo da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+#SubForm::-webkit-scrollbar-thumb {
+    background: #0b7577; /* Cor da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+#SubForm::-webkit-scrollbar-thumb:hover {
+    background: #4b9c9e; /* Cor da barra de rolagem ao passar o mouse */
+}
+#SubForm #LimparBtt{
+    background-color: #0b7577;
+    color: white;
+    padding: 8px;
+    border: none;
+    font-family: Poppins;
+    margin: 30px 0px 10px 0px;
+}
+#SubForm #EnviarBtt{
+    background-color: #000000;
+    color: white;
+    padding: 8px;
+    border: none;
+    font-family: Poppins;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: #ffffff; /* Fundo do card */
+
+    border-radius: 8px; /* Cantos arredondados */
+    width: 200px;
+    height: 330px; /* Largura do card ocupando todo o espaço disponível */
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 10px; /* Margem ao redor do card */
+    overflow: hidden; /* Oculta o excesso */
+    box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.319);
+    transition: all 0.3s ease-in; /* Efeito de transição */
+    align-items: center;
+    
+    
+}
+.card:hover{
+    transform: scale(1.05);
+   /* box-shadow: 4px 4px #000000,
+                8px 8px #0b7577,
+                12px 12px #4cafac ; */
+}
+.card h2{
+    font-size: 14px;
+    font-family: Roboto;
+}
+.card p{
+    font-size: 10px;
+    font-family: Poppins;
+    margin: 3px;
+} 
+.card img {
+    width: 200px; /* Largura padrão da imagem */
+    height: 200px; /* Altura padrão da imagem */
+    object-fit: cover; /* Faz a imagem preencher o contêiner sem esticar */
+    object-position: center; /* Centraliza a imagem dentro do contêiner */
+}
+.card button{
+    width: 180px;
+    
+    border-radius: 20px;
+    padding: 8px;
+    background-color: #000;
+    color: white;
+
+}
+
+.content::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+}
+
+.content::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Cor do fundo da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: #3f979a; /* Cor da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+    background: #6aa9a9; /* Cor da barra de rolagem ao passar o mouse */
+}
+#modalAnimalItem{
+     display: flex;
+     flex-direction: column;
+
+}
+#modalAnimalItem img{
+    width: 200px; /* Largura padrão da imagem */
+    height: 200px; /* Altura padrão da imagem */
+    object-fit: cover; /* Faz a imagem preencher o contêiner sem esticar */
+    object-position: center; /* Centraliza a imagem dentro do contêiner */
+}
+
+
+.cardcomprovante {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 200px;
+    margin: 10px;
+    width: 400px;
+    display: flex;
+    text-align: center;
+    background-color: #f5f5f5;
+  }
+  
+  .cardcomprovante img {
+    width: 200px; /* Largura padrão da imagem */
+    height: 200px; /* Altura padrão da imagem */
+    object-fit: cover; /* Faz a imagem preencher o contêiner sem esticar */
+    object-position: center;
+  }
+  
+  .botao-download, .botao-visualizar {
+    background-color: #4cafac;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    width: 70px;
+
+  }
+.Comprovantes{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    
+  }
+  #comprovante{
+    width: auto;
+    height: auto;
+    max-width: 900px; /* Define uma largura máxima para o comprovante */
+    padding: 20px;
+    margin: 200px auto;
+    box-shadow: 0px 10px 14px 0px #0000003f;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se necessário */
+    overflow-x: hidden; /* Oculta a barra de rolagem horizontal */
+    word-wrap: break-word; /* Quebra palavras longas em novas linhas */
+    max-height: 80vh; /* Define uma altura máxima, assim a barra de rolagem aparece antes de ocupar toda a tela */
+    
+  }
+
+  /* Para garantir que apenas 3 cards apareçam por linha */
+@media (min-width: 1200px) {
+    .comprovante .cardcomprovante {
+        flex: 0 0 30%; /* Faz com que cada card ocupe cerca de 30% da largura da linha */
+    }
+}
+
+/* Para garantir responsividade em telas menores */
+@media (max-width: 1200px) {
+    .comprovante .cardcomprovante {
+        flex: 0 0 45%; /* 2 cards por linha em telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .comprovante .cardcomprovante {
+        flex: 0 0 100%; /* 1 card por linha em telas pequenas */
+    }
+}
+
+  #comprovant::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+}
+
+#comprovant::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Cor do fundo da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+#comprovant::-webkit-scrollbar-thumb {
+    background: #3f979a; /* Cor da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+#comprovant::-webkit-scrollbar-thumb:hover {
+    background: #6aa9a9; /* Cor da barra de rolagem ao passar o mouse */
+}
+
+  #DadosComprovante{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  #DadosComprovante p{
+    font-size: 12px;
+    margin: 2px;
+  }
+  #BttComprovante{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+  }
+
+
+  #solicitacoes{
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    margin-top: 70px;
+    box-shadow: 0px 10px 14px 0px #00000059;
+    padding: 22px;
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se necessário */
+    overflow-x: hidden; /* Oculta a barra de rolagem horizontal */
+    word-wrap: break-word; /* Quebra palavras longas em novas linhas */
+    max-height: 80vh; /* Define uma altura máxima, assim a barra de rolagem aparece antes de ocupar toda a tela */
+    
+  }
+
+  #solicitacoes::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+}
+
+#solicitacoes::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Cor do fundo da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+#solicitacoes::-webkit-scrollbar-thumb {
+    background: #3f979a; /* Cor da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+#solicitacoes::-webkit-scrollbar-thumb:hover {
+    background: #6aa9a9; /* Cor da barra de rolagem ao passar o mouse */
+}
+
+  #solicitacoes #caixaprincipalPedidos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+  }
+  #navPedidos{
+    background-color: #f9f9f9;
+    width: 680px;
+    padding: 8px;
+    margin: auto;
+    border-radius: 50px;
+    
+    margin: 60px auto;
+    
+  }
+  #navPedidos ul{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+   margin: 2px 0px;
+   padding: 1px 6px;
+   cursor: pointer;
+    
+  }
+  #textPedidos{
+    padding: 12px;
+  }
+  #textPedidos p{
+    padding: 0px 40px;
+  } 
+  #navPedidos ul li{
+    list-style: none;
+    font-family: Poppins;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    
+  }
+
+  #amarelo, #vermelho, #verde{
+    padding: 1px 12px;
+    border-radius: 50%;
+   
+    margin: 0px 8px;
+  }
+  #amarelo {
+    background-color: rgba(255, 255, 0, 0.563);
+  }
+  #vermelho{
+    background-color: rgba(255, 0, 0, 0.589);
+  }
+  #verde{
+    background-color: rgba(0, 128, 0, 0.654);
+  }
+  .contentPedidos{
+    
+    display: flex;
+    justify-content: space-between;
+    width: 480px;
+    border: 1px solid rgb(209, 209, 209);
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 40px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.191);
+    
+  }
+  #caixaExemploPedidos{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+#caixaExemploPedidos2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+#statusPedidosExemplo, #statusPedidosExemplo2, #statusPedidosExemplo3{
+    background: rgba(255, 255, 0, 0.546);
+    padding: 8px;
+    border-radius: 10px;
+   width: 100px;
+    font-family: Poppins;
+    font-weight: 700;
+    color: rgba(255, 174, 0, 0.883);
+    
+}
+#statusPedidosExemplo2{
+    background-color: rgba(255, 0, 0, 0.404);
+    color: rgba(255, 0, 0, 0.86);
+    font-weight: 700;
+}
+#statusPedidosExemplo3{
+    background-color: rgba(0, 128, 0, 0.341);
+    color: green;
+    font-weight: 700;
+
+}
+#caixaExemploPedidos2 button{
+   width: 60px;
+   background: none;
+   border: none;
+   cursor: pointer;
+}
+
+#CaixaPrincipalModalAnimal{
+    display: flex;
+    
+    gap: 40px;
+    
+}
+#CaixaDados{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 20px 20px;
+    text-align: justify;
+    justify-content: space-between;
+}
+#CaixaDados h2{
+    font-family: Roboto;
+}
+#DadosAnimal{
+    width: 400px;
+    height: 300px;
+    font-family: Poppins;
+}
+#CaixaDados button{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+
+    #CaixaPerfil {
+        flex-direction: column;
+        display: flex
+    ;
+        gap: 20px;
+        align-items: baseline;
+        width: 100%;
+        margin-bottom: 60px;
+        box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.202);
+    }
+    #CaixaPerfil img {
+        display: none;
+    }
+
+    #notificacaoBtt {
+        display: none;
+    }
+
+
+    #PaginaInicial {
+        display: none;
+    }
+
+    #CaixaDashboard1 {
+        display: flex
+        
+    ;
+    align-items: center;
+    flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        margin: 0px 80px;
+    }
+    .Divisao {
+        display: flex
+    ;
+   
+        flex-direction: column;
+        justify-content: center;
+        gap: 80px;
+        align-items: flex-start;
+        margin: 50px;
+    }
+    #CaixaConsulta {
+        display: none
+    ;
+      
+    }
+    .grafico {
+        padding: 20px;
+        box-shadow: 0px 10px 12px 0px rgba(0, 0, 0, 0.305);
+        border-radius: 30px;
+        width: none;
+    }
+
+    #meuGrafico   {display: block;
+    box-sizing: border-box;
+    height: 100px;
+    width: 250px;
+}
+
+#CaixaDenuncia, #CaixaAdocao, #CaixaDoacao {
+    
+    width: 220px;
+ 
+
+    
+}
+#subCaixaDenuncia , #SubCaixaAdocao, #subCaixaDoacao{
+
+    font-size: 11px;
+}
+#graficoDenuncias{
+    width: 50px;
+    height: 100px;
+}
+
+#graficotext div{
+    font-size: 11px;
+}
+
+        }
